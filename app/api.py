@@ -34,6 +34,17 @@ def move_response(move):
         })
     )
 
+def tfl_response(data):
+    return HTTPResponse(
+        status=200,
+        headers={
+            "Content-Type": "application/json"
+        },
+        body=json.dumps({
+            "data": data
+        })
+    )
+
 def end_response():
     return HTTPResponse(
         status=200
