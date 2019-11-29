@@ -32,13 +32,12 @@ def ping():
 
 @bottle.post('/start')
 def start():
+    global horizontalDirection, verticalDirection, lastMove
+    horizontalDirection = 'right'
+    verticalDirection = 'up'
+
     data = bottle.request.json
 
-    """
-    TODO: If you intend to have a stateful snake AI,
-            initialize your snake state here using the
-            request's data if necessary.
-    """
     print(json.dumps(data))
 
     color = "#00FF00"
@@ -48,18 +47,16 @@ def start():
 
 @bottle.post('/move')
 def move():
+    global horizontalDirection, verticalDirection, lastMove
     data = bottle.request.json
 
-    """
-    TODO: Using the data from the endpoint request object, your
-            snake AI must choose a direction to move in.
-    """
-    print(json.dumps(data))
+    head = data["you"]["body"][0]
+    body = data["you"]["body"][1]
 
-    directions = ['up', 'down', 'left', 'right']
-    direction = random.choice(directions)
+    print(move)
 
-    return move_response(direction)
+    lastMove = move
+    return move_response(move)
 
 
 @bottle.post('/end')
