@@ -55,8 +55,6 @@ def move():
     body = copy.deepcopy(data["you"]["body"][1])
     occupiedZones = copy.deepcopy(data["you"]["body"])
 
-    print(head)
-
     if head["y"] == 1:
         verticalDirection = 'down'
 
