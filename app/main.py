@@ -84,11 +84,8 @@ def move():
         move = verticalDirection
 
     if not is_safe(projected_location(copy.deepcopy(head), move)):
-        print("Not Safe " + move)
         move = find_safe(copy.deepcopy(head))
-        print("Safe Move " + move)
 
-    print(head)
     lastMove = move
     return move_response(move)
 
@@ -121,7 +118,6 @@ def find_safe(head):
     else:
         direction = "down"
 
-    print(direction)
     return direction
 
 
