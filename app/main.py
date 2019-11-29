@@ -83,8 +83,10 @@ def move():
     else:
         move = verticalDirection
 
+    """
     if not is_safe(projected_location(copy.deepcopy(head), move)):
         move = find_safe(copy.deepcopy(head))
+    """
 
     lastMove = move
     return move_response(move)
